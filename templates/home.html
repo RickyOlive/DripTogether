@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="flex justify-center items-center bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded relative" role="alert">
+      {{ message }}
+      <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" aria-label="Close">
+        <svg class="fill-current h-6 w-6 text-blue-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 5.652 5.652a.5.5 0 1 0-.707.707L9.293 10l-4.348 4.348a.5.5 0 0 0 .707.707L10 10.707l4.348 4.348a.5.5 0 0 0 .707-.707L10.707 10l4.348-4.348a.5.5 0 0 0 0-.707z"/></svg>
+      </button>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<script>
+  // JavaScript to close the notification when the close button is clicked
+  const closeButtons = document.querySelectorAll('[aria-label="Close"]');
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.parentNode.remove();
+    });
+  });
+</script>
+
+{% endblock %}
