@@ -6,12 +6,10 @@ from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-
 from .decorators import user_not_authenticated
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from .forms import SignUpForm
-
 
 
 def activate_email(request, user, to_email):
@@ -52,9 +50,6 @@ def activate(request, uidb64, token):
 
 
 def display_home(request):
-
-    if User.is_authenticated:
-        print(request.user.username)
 
     if request.method == 'POST':
         username_or_email = request.POST['username']

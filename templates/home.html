@@ -1,17 +1,79 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+
+
+  /* Additional Styles */
+  .bg-custom-blue {
+    background-color: #316879;
+  }
+
+  .bg-custom-pink {
+    background-color: #f47a60;
+  }
+
+  .bg-custom-light-blue {
+    background-color: #7fe7dc;
+  }
+
+  .bg-custom-light-gray {
+    background-color: #ced7d8;
+  }
+</style>
 
 {% if messages %}
   {% for message in messages %}
-    <div class="flex justify-center items-center bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded relative" role="alert">
+    <div class="flex justify-center items-center bg-custom-yellow border border-custom-yellow text-custom-yellow px-4 py-3 rounded relative" role="alert">
       {{ message }}
       <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" aria-label="Close">
-        <svg class="fill-current h-6 w-6 text-blue-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 5.652 5.652a.5.5 0 1 0-.707.707L9.293 10l-4.348 4.348a.5.5 0 0 0 .707.707L10 10.707l4.348 4.348a.5.5 0 0 0 .707-.707L10.707 10l4.348-4.348a.5.5 0 0 0 0-.707z"/></svg>
+        <svg class="fill-current h-6 w-6 text-custom-yellow-svg" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 5.652 5.652a.5.5 0 1 0-.707.707L9.293 10l-4.348 4.348a.5.5 0 0 0 .707.707L10 10.707l4.348 4.348a.5.5 0 0 0 .707-.707L10.707 10l4.348-4.348a.5.5 0 0 0 0-.707z"/></svg>
       </button>
     </div>
   {% endfor %}
 {% endif %}
+
+<section class="bg-custom-pink py-16">
+  <div class="container mx-auto text-center">
+    <h1 class="text-4xl font-semibold mb-4 text-custom-yellow animate-bounce">Welcome to MyAwesomeSite</h1>
+    <p class="text-custom-blue">Discover our amazing services and explore our portfolio to see our latest projects.</p>
+    <div class="mt-8">
+      <a href="#" class="bg-custom-dark text-custom-pink px-6 py-3 rounded hover:bg-custom-yellow-btn transition duration-300 ease-in-out">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-custom-blue py-12">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-6 rounded shadow-md">
+      <h2 class="text-xl font-semibold mb-2 text-custom-blue">Our Services</h2>
+      <p class="text-gray-700">Explore a wide range of services designed to meet your needs.</p>
+      <a href="#" class="mt-4 inline-block text-custom-blue hover:underline">View Services</a>
+    </div>
+    <div class="bg-white p-6 rounded shadow-md">
+      <h2 class="text-xl font-semibold mb-2 text-custom-blue">Latest Projects</h2>
+      <p class="text-gray-700">Check out our portfolio showcasing our most recent projects.</p>
+      <a href="#" class="mt-4 inline-block text-custom-blue hover:underline">View Portfolio</a>
+    </div>
+    <div class="bg-white p-6 rounded shadow-md">
+      <h2 class="text-xl font-semibold mb-2 text-custom-blue">Contact Us</h2>
+      <p class="text-gray-700">Have questions or want to collaborate? Get in touch with us.</p>
+      <a href="#" class="mt-4 inline-block text-custom-blue hover:underline">Contact Info</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-custom-light-blue py-12">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Your content for the third section here -->
+  </div>
+</section>
+
+<footer class="bg-custom-light-gray text-custom-blue py-6">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2023 MyAwesomeSite. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
   // JavaScript to close the notification when the close button is clicked

@@ -4,11 +4,11 @@ from django import forms
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="", widget=forms.TextInput(
-        attrs={'class': 'form-input w-full px-3 py-2 rounded-md placeholder-gray-400', 'placeholder': 'Email Address'}))
+        attrs={'class': 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300', 'placeholder': 'Email Address'}))
     first_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(
-        attrs={'class': 'form-input w-full px-3 py-2 rounded-md placeholder-gray-400', 'placeholder': 'First Name'}))
+        attrs={'class': 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300', 'placeholder': 'First Name'}))
     last_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(
-        attrs={'class': 'form-input w-full px-3 py-2 rounded-md placeholder-gray-400', 'placeholder': 'Last Name'}))
+        attrs={'class': 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300', 'placeholder': 'Last Name'}))
 
 
     class Meta:
@@ -18,19 +18,19 @@ class SignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
 
-        self.fields['username'].widget.attrs['class'] = 'form-input w-full px-3 py-2 rounded-md placeholder-gray-400'
+        self.fields['username'].widget.attrs['class'] = 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300'
         self.fields['username'].widget.attrs['placeholder'] = 'Username'
         self.fields['username'].label = ''
         self.fields[
             'username'].help_text = '<span class="form-text form-text-alter text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
 
-        self.fields['password1'].widget.attrs['class'] = 'form-input w-full px-3 py-2 rounded-md placeholder-gray-400'
+        self.fields['password1'].widget.attrs['class'] = 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300'
         self.fields['password1'].widget.attrs['placeholder'] = 'Password'
         self.fields['password1'].label = ''
         self.fields[
             'password1'].help_text = '<ul class="form-text form-text-alter text-muted small"><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can\'t be a commonly used password.</li><li>Your password can\'t be entirely numeric.</li></ul>'
 
-        self.fields['password2'].widget.attrs['class'] = 'form-input w-full px-3 py-2 rounded-md placeholder-gray-400'
+        self.fields['password2'].widget.attrs['class'] = 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
         self.fields['password2'].label = ''
         self.fields[
